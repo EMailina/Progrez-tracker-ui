@@ -9,11 +9,15 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { HabitHomeComponent } from './habit-home/habit-home.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HabitHomeComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
