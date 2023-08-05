@@ -3,4 +3,39 @@
     color: #ffffff
     display: flex
     height: 100vh
+    margin: auto
+    top: 0
+    bottom: 0
+    position: fixed
+    top: 0px
+    left: 0px
+    bottom: 0px
+    right: 0px
+    z-index: -1
+    vertical-align: middle
+    align-items: center
+
+
+
+:host
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+.mat-form-field-infix
+    padding: 0
+    border: 0
+
+.mat-form-field-flex
     margin: 0
+    padding: 5px
+    padding-bottom: 17px
+    height: 20px
+
+.mat-form-field-appearance-outline .mat-form-field-outline
+    color: white
+
+/* Font color */
+input.mat-input-element
+    color: white
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple
+    background-color: green !important
