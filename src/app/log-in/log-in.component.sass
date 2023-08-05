@@ -15,8 +15,6 @@
     vertical-align: middle
     align-items: center
 
-
-
 :host
     display: flex
     flex-direction: column
@@ -34,8 +32,31 @@
 .mat-form-field-appearance-outline .mat-form-field-outline
     color: white
 
-/* Font color */
 input.mat-input-element
     color: white
 ::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple
     background-color: green !important
+::ng-deep .mat-focused .mat-form-field-label
+
+    color: green !important
+
+::ng-deep.mat-form-field-underline
+
+    background-color: green !important
+
+::ng-deep.mat-form-field-ripple
+
+    background-color: green !important
+
+.mat-form-field
+    width: 350px
+    font-size: 14px
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple
+
+    color: #999 !important
+
+::ng-deep .mat-form-field-empty.mat-form-field-label
+    color: white
+
+.login-forms    
+    margin: auto
