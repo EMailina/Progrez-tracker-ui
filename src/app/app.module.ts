@@ -9,7 +9,6 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    FontAwesomeModule
   ],
   providers: [MatToolbarModule],
   bootstrap: [AppComponent]
