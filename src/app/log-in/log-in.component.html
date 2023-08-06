@@ -1,18 +1,26 @@
 <div class="login-body">
     <div class="login-forms">
-        <div>
-            <mat-form-field>
-                <mat-label>Username</mat-label>
-                <input matInput>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Password</mat-label>
-                <input matInput>
-            </mat-form-field>
-        </div>
-        <button mat-mini-flat-button class="right">Log in</button>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"  type="button"
+                        [attr.aria-pressed]="hide">
+                        <i class="fal fa-eye-slash" *ngIf="!hide"></i>
+                        <i class="fal fa-eye" *ngIf="hide"></i>
+                    </button>
+                </mat-form-field>
+            </div>
 
+            <button mat-mini-flat-button class="right" >Log in</button>
+        </form>  <div class="white">{{cookie}}</div>
     </div>
+  
 </div>
