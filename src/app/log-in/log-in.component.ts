@@ -44,8 +44,7 @@ export class LogInComponent implements OnInit {
        // this.cookie = headers.get('JSESSIONID') as string;
         var s = response.headers.get('Set-Cookie')
         console.log(s);
-        this.cookie = response.headers('JSESSIONID')
-        alert(this.cookie);
+        
       },
       (error) => {                              //error() callback
         console.error('Request failed with error')
@@ -58,6 +57,7 @@ export class LogInComponent implements OnInit {
         this.loading = false;
 
       })
+      this.router.navigate(['/home']);
 
   }
 }
