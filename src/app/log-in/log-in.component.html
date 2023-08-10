@@ -22,5 +22,20 @@
             <button mat-mini-flat-button class="right" >Log in</button>
         </form>  <div class="white">{{cookie}}</div>
     </div>
-  
+    <table class='table'>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+      
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of habits;">
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+      
+          </tr>
+          </tbody>
+          </table>
 </div>

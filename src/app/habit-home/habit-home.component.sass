@@ -1,70 +1,72 @@
-// /*.habit-list
-//     display: inline-block
-//     align-items: center
-//     margin: auto
-//     display: flex
-//     justify-content: center
-//     max-width: 1000px
-//     vertical-align: middle
-//     line-height: 64px
-// .habit-item
-//     margin: 20px
-//     border: 2px solid green
-//     border-radius: 10px
-//     vertical-align: middle
-// .habit-icon
-//     display: inline-block
-//     margin: 10px 20px
-//     font-size: 30px
-//     color: green
-// .habit-status
-//     display: inline-block
-//     vertical-align: middle
+body
+    font-family: Arial, sans-serif
+    margin: 0
+    padding: 0
+    background-color: #f2f2f2
+    color: #333
 
-// .habit-name
-//     display: inline-block
-//     vertical-align: middle
-//     margin: 0 10px*/
 .habit-list
-    max-width: 700px
-    margin: auto
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 100vh
 
 .habit-item
     display: flex
     align-items: center
-    margin: 20px
-    border: 2px solid green
-    border-radius: 10px
+    background-color: #fff
+    border-radius: 20px
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1)
     overflow: hidden
+   
 
 .habit-icon
-    font-size: 30px
-    color: green
-    margin: 10px 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 0px
+    height: 100%
+    background-color: #78B660
+    border-radius: 20px 0 0 20px
+    padding: 15px
+
+    & i
+        color: white
+        font-size: 24px
 
 .habit-content
     display: flex
     align-items: center
-    margin: 0 10px
-    flex: 1
-
-.habit-status
-    margin-left: 5px
-    font-size: 20px
-    color: green
-    margin: 0 10px
+    flex-grow: 1
+    padding-left: 20px
 
 .habit-name
-    flex: 1
-    font-size: 20px
-    margin-right: 12px
-.fa-check
-    font-weight: 500
+    font-size: 18px
+    margin-right: 40px
+
+.habit-status
+    display: flex
+    align-items: center
+
+    & i
+        color: white
+        font-size: 16px
+        background-color: #78B660
+        border-radius: 50%
+        width: 24px
+        height: 24px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-right: 6px
 
 @media screen and (max-width: 480px)
+    .habit-item
+        width: 300px
 
     .habit-icon
-        margin: 10px
+        width: 50px
+        height: 50px
 
-    .habit-status
-        margin: 0 5px
+    .habit-name
+        font-size: 16px
