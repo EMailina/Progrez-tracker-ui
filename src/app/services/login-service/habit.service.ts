@@ -13,7 +13,7 @@ import { User } from '../user';
 })
 export class HabitService {
 
-    baseURL: string = "https://tracker-0tjf.onrender.com";
+baseURL: string = "https://tracker-progrez.onrender.com";
     corsHeaders: HttpHeaders = new HttpHeaders;
 
     constructor(private http: HttpClient) { }
@@ -50,8 +50,12 @@ export class HabitService {
     }
 
     login(body: User): Observable<any> {
+        const payload = new HttpParams()
+        .set('username', body.username)
+        .set('password', body.password);
       
-        var z = this.http.post(this.baseURL + ApiURIs.POST_LOGIN, body, {observe:"response",responseType: 'text', withCredentials: false});
+        
+        var z = this.http.post(this.baseURL + ApiURIs.POST_LOGIN, payload, {observe:"response", responseType: 'text', withCredentials: true});
         return z;
     }
 }

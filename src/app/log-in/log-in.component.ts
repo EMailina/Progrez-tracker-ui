@@ -29,7 +29,7 @@ export class LogInComponent implements OnInit {
 
   hide = true;
 
-  onSubmit() {
+   onSubmit() {
     var user: User = {
       username: this.form.get("username")?.value,
       password: this.form.get("password")?.value,
@@ -39,28 +39,27 @@ export class LogInComponent implements OnInit {
     this.errorMessage = "";
 
 
-    this.habitService.login(user).subscribe(
+   this.habitService.login(user).subscribe(
       (response) => {                           //next() callback
         console.log('response received')
-        let headers: Headers = response.headers.get('JSESSIONID');
-       // this.cookie = headers.get('JSESSIONID') as string;
-        var s = response.headers.get('Set-Cookie')
-        console.log(s);
         
       },
       (error) => {                              //error() callback
         console.error('Request failed with error')
-        this.errorMessage = error;
-        this.loading = false;
-        this.cookie = error.headers('JSESSIONID')
+        
       },
       () => {                                   //complete() callback
         console.error('Request completed')      //This is actually not needed 
         this.loading = false;
-
+      
       })
-      //this.router.navigate(['/home']);
-      this.habitService.getHabits()
+     
+
+  }
+  send(){
+    this.loading = true;
+    this.errorMessage = "";
+    this.habitService.getHabits()
       .subscribe(
         (response) => {                           //next() callback
           console.log('response received')
@@ -75,7 +74,6 @@ export class LogInComponent implements OnInit {
           console.error('Request completed')      //This is actually not needed 
           this.loading = false; 
         })
-
   }
 }
 
