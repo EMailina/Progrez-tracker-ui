@@ -53,6 +53,7 @@ export class LogInComponent implements OnInit {
         this.loading = false;
       
       })
+      this.router.navigate(['/home']);
      
 
   }

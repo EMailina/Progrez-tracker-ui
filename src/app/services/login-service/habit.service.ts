@@ -43,6 +43,10 @@ baseURL: string = "https://tracker-progrez.onrender.com";
     //     ).pipe( map(res => res), catchError(err => throwError(err)) );
     //   }
     
+    getHabitById(): Observable<any> {
+        var z = this.http.get(this.baseURL + "/api/v0"+ ApiURIs.GET_HABITS_BY_ID);
+        return z;
+    }
 
     getHabits(): Observable<any> {
         var z = this.http.get(this.baseURL + "/api/v0"+ ApiURIs.GET_HABITS);
