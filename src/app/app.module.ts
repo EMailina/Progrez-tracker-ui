@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/interceptor';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AuthInterceptor } from './services/interceptor';
     AppComponent,
     NavbarComponent,
     HabitHomeComponent,
-    LogInComponent
+    LogInComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

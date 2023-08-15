@@ -1,23 +1,26 @@
-body
-
-    margin: 0
-    padding: 0
-    background-color: #f2f2f2
-    color: #333
 
 .habit-list
-    display: flex
+    margin: auto
+    padding-top: 10px
     justify-content: center
-    align-items: center
-    min-height: 100vh
-    flex-direction: column
+    background-color: #fff
+    max-width: 420px
+    border-radius: 15px
+    padding-bottom: 10px
 
 .habit-item
     display: flex
     background-color: #fff
     overflow: hidden
-    margin: 3px
-    border-radius: 12px
+    border-bottom: 1px solid #999
+    padding-top: 3px
+    padding-bottom: 3px
+
+    margin-left: 10px
+    margin-right: 10px
+
+    &:last-of-type
+        border-bottom: 0px
 
 .habit-icon
     display: flex
@@ -38,23 +41,21 @@ body
     display: flex
     align-items: center
     flex-grow: 1
-    margin-bottom: 5px
+
     margin-left: 15px
-    border-bottom: 1px solid #999
 
 .habit-name
     font-size: 14px
-    margin-right: 80px
     font-weight: 600
 
 .habit-status
     display: flex
     align-items: center
-    margin-right: 15px
+    margin-left: 15px
 
     & i
         color: #fff
-        font-size: 16px
+        font-size: 14px
         background-color: #99c684
         border-radius: 50%
         width: 24px
@@ -71,9 +72,29 @@ body
 .habit-info
     display: flex
     flex-direction: column
+    width: 120px
+
+.habit-label
+    font-weight: 600
+    font-size: 16px
+    margin-left: 33px
+    margin-top: 9px
+    color: #333
+    justify-content: center
+    margin: auto
+    max-width: 420px
+    margin-bottom: 15px
+
+.label-green
+    color: #3cb34c
 
 @media screen and (max-width: 480px)
-
-
-    .habit-name
-       margin-right: 40px
+    .habit-list
+        display: flex
+        align-items: center
+        flex-direction: column
+        margin: 5px
+    .habit-info
+        display: flex
+        flex-direction: column
+        width: 95px

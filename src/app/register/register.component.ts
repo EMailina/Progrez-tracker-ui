@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { Habit } from '../services/habit';
 
 @Component({
-  selector: 'app-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.sass']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.sass']
 })
-export class LogInComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   loading: boolean = false;
   errorMessage!: string | null;
@@ -57,10 +57,9 @@ export class LogInComponent implements OnInit {
         this.loading = false;
 
       })
-
   }
-  onRegister() {
-    this.router.navigate(['/register']);
+  onLogIn() {
+    this.router.navigate(['/login']);
   }
 
   isError() {

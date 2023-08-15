@@ -1,15 +1,26 @@
 <div class="login-body">
     <div class="login-forms">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <div>
 
+            <div>
+                <mat-form-field>
+                    <mat-label>Firstname</mat-label>
+                    <input matInput formControlName="firstname" autofocus>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Lastname</mat-label>
+                    <input matInput formControlName="lastname" autofocus>
+                </mat-form-field>
+            </div>
+            <div>
                 <mat-form-field>
                     <mat-label>Username</mat-label>
-                    <input matInput formControlName="username" autofocus>
+                    <input matInput formControlName="username">
 
                 </mat-form-field>
             </div>
-
             <div>
                 <mat-form-field>
                     <mat-label>Password</mat-label>
@@ -23,9 +34,9 @@
             </div>
             <div class="under-form">
                 <div class="green-button right" (keyup.enter)="onSubmit()" (click)="onSubmit()">Sign in</div>
-                <div class="login-note">Don't you have an account?</div>
-                <div class="login-note">Join us and
-                    <span class="green" (click)="onRegister()">register</span>
+                <div class="login-note">Already have account?</div>
+                <div class="login-note">
+                    <span class="green" (click)="onLogIn()">log in</span>
                 </div>
             </div>
         </form>
