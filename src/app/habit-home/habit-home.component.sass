@@ -1,5 +1,5 @@
 body
-    font-family: Arial, sans-serif
+
     margin: 0
     padding: 0
     background-color: #f2f2f2
@@ -15,67 +15,65 @@ body
 .habit-item
     display: flex
     background-color: #fff
-    border-bottom: 3px solid #78B660
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1)
     overflow: hidden
-    margin-bottom: 5px
+    margin: 3px
+    border-radius: 12px
 
 .habit-icon
     display: flex
     align-items: center
     justify-content: center
-    width: 30px
-    height: 100%
+    width: 20px
+    height: 20px
     background-color: #78B660
-    padding: 15px
-    padding-bottom: 12px
-    border-top-right-radius: 3px
-    border-top-left-radius: 3px
+    padding: 12px
+    padding-bottom: 10px
+    border-radius: 10px
+    margin: 5px
     & i
         color: white
-        font-size: 24px
+        font-size: 20px
 
 .habit-content
     display: flex
     align-items: center
     flex-grow: 1
-    padding-left: 20px
+    margin-bottom: 5px
+    margin-left: 15px
+    border-bottom: 1px solid #999
 
 .habit-name
-    font-size: 18px
-    margin-right: 55px
+    font-size: 14px
+    margin-right: 80px
+    font-weight: 600
 
 .habit-status
     display: flex
     align-items: center
     margin-right: 15px
+
     & i
-        color: white
+        color: #fff
         font-size: 16px
-        background-color: #78B660
+        background-color: #99c684
         border-radius: 50%
         width: 24px
         height: 24px
         display: flex
         justify-content: center
         align-items: center
-        margin-right: 6px
+        margin-right: 14px
 
-.habit-item:first-child
-    border-top-left-radius: 20px
-    border-top-right-radius: 20px
-
-.habit-item:last-child
-    border-bottom-left-radius: 20px
-    border-bottom-right-radius: 20px
+.habit-description
+    font-size: 8px
+    margin-top: 2px
+    color: #999
+.habit-info
+    display: flex
+    flex-direction: column
 
 @media screen and (max-width: 480px)
-    .habit-item
-        width: 300px
 
-    .habit-icon
-        width: 50px
-        height: 50px
 
     .habit-name
-        font-size: 16px
+       margin-right: 40px

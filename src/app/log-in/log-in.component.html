@@ -10,33 +10,21 @@
             <div>
                 <mat-form-field>
                     <mat-label>Enter your password</mat-label>
-                    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"  type="button"
-                        [attr.aria-pressed]="hide">
+                    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'"
+                       >
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        type="button" [attr.aria-pressed]="hide">
                         <i class="fal fa-eye-slash" *ngIf="!hide"></i>
                         <i class="fal fa-eye" *ngIf="hide"></i>
                     </button>
+
+                    <mat-error *ngIf="isError()">
+                        Email is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
             </div>
 
-            <button mat-mini-flat-button class="right" >Log in</button>
-        </form>  
+            <button mat-mini-flat-button class="right">Log in</button>
+        </form>
     </div>
-    <table class='table'>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-      
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let book of habits;">
-            <td>{{book.id}}</td>
-            <td>{{book.name}}</td>
-      
-          </tr>
-          </tbody>
-          </table>
-          <button mat-mini-flat-button class="right" (click)="send()">send</button>
 </div>

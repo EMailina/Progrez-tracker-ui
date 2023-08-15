@@ -13,10 +13,10 @@ import { Habit } from '../services/habit';
 export class LogInComponent implements OnInit {
 
   loading: boolean = false;
-  errorMessage!: string;
+  errorMessage!: string | null;
   cookie: string = "-";
   habits!: Habit[];
-  
+
   form: FormGroup = new FormGroup({
     username: new FormControl(""),
     password: new FormControl("")
@@ -29,42 +29,52 @@ export class LogInComponent implements OnInit {
 
   hide = true;
 
-   onSubmit() {
+  onSubmit() {
     var user: User = {
       username: this.form.get("username")?.value,
       password: this.form.get("password")?.value,
     }
 
     this.loading = true;
-    this.errorMessage = "";
+    this.errorMessage = null;
 
 
-   this.habitService.login(user).subscribe(
+    this.habitService.login(user).subscribe(
       (response) => {                           //next() callback
         console.log('response received')
-        
+        this.router.navigate(['/home']);
       },
       (error) => {                              //error() callback
         console.error('Request failed with error')
-        
+        this.errorMessage = error.status;
+
       },
       () => {                                   //complete() callback
         console.error('Request completed')      //This is actually not needed 
         this.loading = false;
-      
+
       })
-      this.router.navigate(['/home']);
-     
+
+
+
+
+
+
 
   }
-  send(){
+  isError() {
+    if (this.errorMessage == '401')
+      return true;
+    else return false;
+  }
+  send() {
     this.loading = true;
     this.errorMessage = "";
     this.habitService.getHabits()
       .subscribe(
         (response) => {                           //next() callback
           console.log('response received')
-          this.habits = response; 
+          this.habits = response;
         },
         (error) => {                              //error() callback
           console.error('Request failed with error')
@@ -73,7 +83,7 @@ export class LogInComponent implements OnInit {
         },
         () => {                                   //complete() callback
           console.error('Request completed')      //This is actually not needed 
-          this.loading = false; 
+          this.loading = false;
         })
   }
 }
