@@ -47,6 +47,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule
   ],
   providers: [
+    
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

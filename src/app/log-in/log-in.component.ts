@@ -44,8 +44,12 @@ export class LogInComponent implements OnInit {
 
     this.habitService.login(user).subscribe(
       (response) => {                           //next() callback
-        console.log('response received')
-        this.router.navigate(['/home']);
+        setTimeout(() => {
+          console.log('response received')
+          this.router.navigate(['/home']);
+        },
+          2000);
+
       },
       (error) => {                              //error() callback
         console.error('Request failed with error')
