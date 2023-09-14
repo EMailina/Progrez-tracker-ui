@@ -39,21 +39,21 @@ export class HabitHomeComponent implements OnInit {
           this.loading = false; 
         })
 
-        this.habitService.getHabitById()
-      .subscribe(
-        (response) => {                           //next() callback
-          console.log('response received')
-          this.habits = response; 
-        },
-        (error) => {                              //error() callback
-          console.error('Request failed with error')
-          this.errorMessage = error;
-          this.loading = false;
-        },
-        () => {                                   //complete() callback
-          console.error('Request completed')      //This is actually not needed 
-          this.loading = false; 
-        })
+      //   this.habitService.getHabitById()
+      // .subscribe(
+      //   (response) => {                           //next() callback
+      //     console.log('response received')
+      //     this.habits = response; 
+      //   },
+      //   (error) => {                              //error() callback
+      //     console.error('Request failed with error')
+      //     this.errorMessage = error;
+      //     this.loading = false;
+      //   },
+      //   () => {                                   //complete() callback
+      //     console.error('Request completed')      //This is actually not needed 
+      //     this.loading = false; 
+      //   })
 
   }
 }
