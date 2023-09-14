@@ -48,7 +48,7 @@ export class LogInComponent implements OnInit {
           console.log('response received')
           this.router.navigate(['/home']);
         },
-        5000);
+        3000);
 
       },
       (error) => {                              //error() callback

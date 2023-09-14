@@ -52,13 +52,13 @@ baseURL: string = "https://tracker-progrez.onrender.com";
 
         var headers = {
             'X-Requested-With': 'XMLHttpRequest',
-            'Accept': 'application/json', // Modify this as needed for your backend
+        
           };
         var z = this.http.get(this.baseURL + "/api/v0"+ ApiURIs.GET_HABITS,  {
             headers: new HttpHeaders(headers),
-            observe: 'response',
-            responseType: 'text',
+           
             withCredentials: true,
+            
           });
         return z;
     }
