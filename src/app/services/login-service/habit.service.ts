@@ -49,7 +49,17 @@ baseURL: string = "https://tracker-progrez.onrender.com";
     }
 
     getHabits(): Observable<any> {
-        var z = this.http.get(this.baseURL + "/api/v0"+ ApiURIs.GET_HABITS);
+
+        var headers = {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json', // Modify this as needed for your backend
+          };
+        var z = this.http.get(this.baseURL + "/api/v0"+ ApiURIs.GET_HABITS,  {
+            headers: new HttpHeaders(headers),
+            observe: 'response',
+            responseType: 'text',
+            withCredentials: true,
+          });
         return z;
     }
 
@@ -57,9 +67,27 @@ baseURL: string = "https://tracker-progrez.onrender.com";
         const payload = new HttpParams()
         .set('username', body.username)
         .set('password', body.password);
-      
         
-        var z = this.http.post(this.baseURL + ApiURIs.POST_LOGIN, payload, {observe:"response", responseType: 'text', withCredentials: true});
+var headers = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'Accept': 'application/json', // Modify this as needed for your backend
+  };
+  
+  var options = {
+    headers: new HttpHeaders(headers),
+    observe: 'response',
+    responseType: 'text',
+    withCredentials: true,
+  };
+  
+  var z = this.http.post(this.baseURL + ApiURIs.POST_LOGIN,payload, {
+    headers: new HttpHeaders(headers),
+    observe: 'response',
+    responseType: 'text',
+    withCredentials: true,
+  });
+  
+    // var z = this.http.post(this.baseURL + ApiURIs.POST_LOGIN, payload, {observe:"response", responseType: 'text', withCredentials: true});
         return z;
     }
 }
