@@ -52,7 +52,7 @@ baseURL: string = "https://tracker-progrez.onrender.com";
 
         var headers = {
             'X-Requested-With': 'XMLHttpRequest',
-        
+            'Sec-Fetch-Site': 'cross-site','Sec-Fetch-Mode':'cors'
           };
         var z = this.http.get(this.baseURL + "/api/v0"+ ApiURIs.GET_HABITS,  {
             headers: new HttpHeaders(headers),
@@ -70,7 +70,9 @@ baseURL: string = "https://tracker-progrez.onrender.com";
         
 var headers = {
     'X-Requested-With': 'XMLHttpRequest',
-    'Accept': 'application/json', // Modify this as needed for your backend
+    'Accept': 'application/json', 
+    'Sec-Fetch-Site': 'cross-site',
+    'Sec-Fetch-Mode':'cors'
   };
   
   var options = {
