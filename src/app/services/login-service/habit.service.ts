@@ -13,7 +13,7 @@ import { User } from '../user';
 })
 export class HabitService {
 
-baseURL: string = "https://tracker-progrez.onrender.com";
+baseURL: string = "https://progrez-tracker-ui.onrender.com";
     corsHeaders: HttpHeaders = new HttpHeaders;
 
     constructor(private http: HttpClient) { }
