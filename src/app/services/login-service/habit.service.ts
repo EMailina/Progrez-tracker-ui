@@ -13,7 +13,7 @@ import { User } from '../user';
 })
 export class HabitService {
 
-baseURL: string = "https://progrez-tracker-ui.onrender.com";
+baseURL: string = "https://progrez-tracker-ui-vercel-app.onrender.com";
     corsHeaders: HttpHeaders = new HttpHeaders;
 
     constructor(private http: HttpClient) { }
